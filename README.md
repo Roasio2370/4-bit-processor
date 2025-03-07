@@ -26,6 +26,7 @@ writing the STACK value on it
 d 1101 JUMP Copy the value on DS on the PC register
 e 1110 SKIPZ Skip one line if ZERO flag is set
 f 1111 SKIPC Skip one line if CARRY flag is set
+
 REGISTERS:
 DATA: a 4-bit register
 STACK: a register stack, with a 4-bit stack pointer for 16 4-bit memory cells.
