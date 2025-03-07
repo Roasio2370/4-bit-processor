@@ -1,33 +1,50 @@
 # 4-bit-processor
 A 4-bit processor made in Logisim Evolution
 
-PROCESSOR
+# PROCESSOR
 It’s a 4-bit processor with a 4-bit DATA bus and a 12-bit ADDRESS(up to 4k-nibbles) bus and an
 instruction set of 16 instructions.
 
-HEX Op Bin OperationDescription
+# HEX Op Bin OperationDescription
+
 0 0000 NOP Do nothing
+
 1 0001 LOAD Load DATA from memory using the DS register
+
 2 0010 STORE Save DATA on memory using the DS register
+
 3 0011 SET Set the DATA register to a literal value
+
 4 0100 PUSH Adds an element to the TOP of the STACK
+
 5 0101 POP Removes and returns the TOP element from the STACK
+
 6 0110 GET Returns an element using the DATA register as the STACK pointer
 and save it on DATA
+
 7 0111 GETSP Copy the STACK POINTER on the DATA register
+
 8 1000 SWAP Swaps the two TOP elements on the STACK
+
 9 1001 ADD Adds the DATA register and the STACK top and save the result on
 DATA. Changes ZERO and CARRY flags
+
 a 1010 SUB Subtract the STACK TOP from DATA, saves the result on DATA.
 Changes ZERO and CARRY flags
+
 b 1011 PUSHPC Push the PC value on the STACK
+
 c 1100 SETDS Set the DS register using the DATA register as the index(L, M, H) and
 writing the STACK value on it
+
 d 1101 JUMP Copy the value on DS on the PC register
+
 e 1110 SKIPZ Skip one line if ZERO flag is set
+
 f 1111 SKIPC Skip one line if CARRY flag is set
 
-REGISTERS:
+
+# REGISTERS:
 DATA: a 4-bit register
 STACK: a register stack, with a 4-bit stack pointer for 16 4-bit memory cells.
 STACK POINTER: a 4-bit register that points to the last added element of the stack.
@@ -41,7 +58,8 @@ The STACK: is a 4-bit address memory of 4-bit cells that starts at the cell 0(ST
 the cell 15(STACK[15]). The STACK[0] cell cant be pushed in or popped out of the STACK but
 can be read by the GET instruction and be set by the SWAP instruction when the stack pointer is set
 to 1.
-INSTRUCTIONS:
+
+# INSTRUCTIONS:
 The fetching stage happens once the clock enters falling edge. The control unit will set the address
 output to the PC value and send a read signal. The processor will halt until the attention signal is
 received, and then save the incoming data as the next instruction to execute.
@@ -57,13 +75,15 @@ three parts DS register should get updated, using the 2 least important bits. Th
 nothing, the value 1 will point to DS-L the lower part, the value 2 will point to DS-M the middle
 part and the value 3 will point to DS-H the higher part of the register. The value to saber will be the
 top value from the STACK.
-MEMORY MAPPING
+
+# MEMORY MAPPING
 000-BFF(3k-nibbles) is reserved for the ROM.
 C00-DFF(512 nibbles) is reserved for RAM.
 E00-EFF(256 nibbles) is reserved for VRAM(writes directly into the display).
 F00-F7F(128 nibbles) is reserved for IO(input/output).
 F80-FFF(128 nibbles) is reserved for expansions.
-USE CASE
+
+# USE CASE
 The processor doesn’t need all the circuitry present on the main view of the Logisim file. This is
 just a use case showing some kind of very limited console with a 16x16 display, four 7-segment
 displays, a joystick(it works just like a four D-PAD) and two buttons(A and B).
