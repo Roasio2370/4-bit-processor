@@ -46,14 +46,20 @@ f 1111 SKIPC Skip one line if CARRY flag is set
 
 # REGISTERS:
 DATA: a 4-bit register
+
 STACK: a register stack, with a 4-bit stack pointer for 16 4-bit memory cells.
+
 STACK POINTER: a 4-bit register that points to the last added element of the stack.
+
 PC: the PROGRAM COUNTER, a 12-bit register that point to the memory cell that contains the
 next instruction to execute.
+
 DS: the DESTINATION SELECTOR register, a 12-bit register used as a pointer to LOAD and
 STORE, and used as the JUMP address.
+
 ZERO and CARRY flag: 2 1-bit registers that keep information after an arithmetic operation is
 executed.
+
 The STACK: is a 4-bit address memory of 4-bit cells that starts at the cell 0(STACK[0]) and ends at
 the cell 15(STACK[15]). The STACK[0] cell cant be pushed in or popped out of the STACK but
 can be read by the GET instruction and be set by the SWAP instruction when the stack pointer is set
@@ -65,11 +71,15 @@ output to the PC value and send a read signal. The processor will halt until the
 received, and then save the incoming data as the next instruction to execute.
 The word size is 4-bit and every instruction as well. Most of the instructions increment the PC when
 they are finished with the exceptions listed next:
+
 SET: increments the PC twice, one at the start to fetch the literal value to set, as they are
 another 4-bit word, and one at the end.
+
 JUMP: it doesn’t increments the PC, this will copy instead the DS value on to the PC.
+
 SKIPZ and SKIPC: both increment the PC at the end but will increment it one more if the
 corresponding flags are set.
+
 SETDS: this instruction will use the DATA register as the parameter to choose which one of the
 three parts DS register should get updated, using the 2 least important bits. The value 0 will point to
 nothing, the value 1 will point to DS-L the lower part, the value 2 will point to DS-M the middle
@@ -78,9 +88,13 @@ top value from the STACK.
 
 # MEMORY MAPPING
 000-BFF(3k-nibbles) is reserved for the ROM.
+
 C00-DFF(512 nibbles) is reserved for RAM.
+
 E00-EFF(256 nibbles) is reserved for VRAM(writes directly into the display).
+
 F00-F7F(128 nibbles) is reserved for IO(input/output).
+
 F80-FFF(128 nibbles) is reserved for expansions.
 
 # USE CASE
