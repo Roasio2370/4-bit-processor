@@ -42,7 +42,7 @@
       <a name="facing" val="south"/>
     </tool>
   </lib>
-  <main name="CPU"/>
+  <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
     <a name="simlimit" val="1000"/>
@@ -81,7 +81,7 @@
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="1.0"/>
+    <a name="simulationFrequency" val="2048000.0"/>
     <comp lib="0" loc="(1000,450)" name="Tunnel">
       <a name="label" val="VRA_W"/>
     </comp>
