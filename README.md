@@ -108,4 +108,6 @@ The 16x16 display is composed by 256 4-bit(gray scale) pixels.
 
 # PROGRAMMING
 
-I recommend you to use <url src="https://hlorenzi.github.io/customasm/web/">customasm</url>
+ It's possible to program by directly inserting hex values on the rom.
+ But, I recommend you to use [customasm](https://hlorenzi.github.io/customasm/web/) and the ProgramBase.asm file to make thing easier.
+ Once copied and the program is finished, select the "logisim 8/16 bit" format and save it on a text file(or .hex file), replace the "v2.0 raw" with "v3.0 hex bytes"
