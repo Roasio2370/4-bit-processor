@@ -81,7 +81,7 @@
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="2048000.0"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(1000,450)" name="Tunnel">
       <a name="label" val="VRA_W"/>
     </comp>
@@ -426,7 +426,7 @@
       <a name="label" val="RESET"/>
     </comp>
     <comp lib="3" loc="(940,140)" name="RGB Video">
-      <a name="color" val="Grayscale (4 bit)"/>
+      <a name="color" val="XTerm16 (4 bit)"/>
       <a name="cursor" val="No Cursor"/>
       <a name="height" val="16"/>
       <a name="reset" val="Synchronous"/>
