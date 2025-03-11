@@ -5,7 +5,8 @@ A 4-bit processor made in Logisim Evolution
 It’s a 4-bit processor with a 4-bit DATA bus and a 12-bit ADDRESS(up to 4k-nibbles) bus and an
 instruction set of 16 instructions.
 
-# HEX Op Bin OperationDescription
+#INSTRUCTION SET
+HEX Op Bin OperationDescription
 
 0 0000 NOP Do nothing
 
