@@ -105,3 +105,7 @@ displays, a joystick(it works just like a four D-PAD) and two buttons(A and B).
 You can change the context where you insert the chip and it should still working properly. Though I
 recommend to reuse the BUS DRIVER as it contains the memory mapping.
 The 16x16 display is composed by 256 4-bit(gray scale) pixels.
+
+# PROGRAMMING
+
+I recommend you to use <url src="https://hlorenzi.github.io/customasm/web/">customasm</url>
