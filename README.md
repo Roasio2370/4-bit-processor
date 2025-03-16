@@ -99,11 +99,11 @@ E00-FFF(256 nibbles) is reserved for VRAM(writes directly into the display).
 
 # USE CASE
 The processor doesn’t need all the circuitry present on the main view of the Logisim file. This is
-just a use case showing some kind of very limited console with a 16x16 display, four 7-segment
-displays, a joystick(it works just like a four D-PAD) and two buttons(A and B).
+just a use case showing some kind of very limited console with a 32x32 display, four 7-segment
+displays, one speaker, a joystick(it works just like a D-PAD) and two buttons(A and B).
 You can change the context where you insert the chip and it should still working properly. Though I
 recommend to reuse the BUS DRIVER as it contains the memory mapping.
-The 16x16 display is composed by 256 4-bit(gray scale) pixels.
+The 16x16 display is composed by 256 3-bit(8 colors) pixels.
 
 # PROGRAMMING
 
