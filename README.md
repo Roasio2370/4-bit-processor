@@ -88,15 +88,14 @@ part and the value 3 will point to DS-H the higher part of the register. The val
 top value from the STACK.
 
 # MEMORY MAPPING
-000-BFF(3k-nibbles) is reserved for the ROM.
+000-BFF(3072 nibbles) is reserved for the ROM.
 
-C00-DFF(512 nibbles) is reserved for RAM.
+C00-DEF(496 nibbles) is reserved for RAM.
 
-E00-EFF(256 nibbles) is reserved for VRAM(writes directly into the display).
+DF0-DFF(16 nibbles) is reserved for IO(input/output).
 
-F00-F7F(128 nibbles) is reserved for IO(input/output).
+E00-FFF(256 nibbles) is reserved for VRAM(writes directly into the display).
 
-F80-FFF(128 nibbles) is reserved for expansions.
 
 # USE CASE
 The processor doesn’t need all the circuitry present on the main view of the Logisim file. This is
