@@ -4338,7 +4338,7 @@
     <comp lib="0" loc="(400,270)" name="Constant"/>
     <comp lib="0" loc="(440,410)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="A_BT"/>
+      <a name="label" val="B_BT"/>
       <a name="width" val="4"/>
     </comp>
     <comp lib="0" loc="(540,410)" name="Tunnel">
