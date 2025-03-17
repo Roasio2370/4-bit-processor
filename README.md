@@ -94,7 +94,7 @@ C00-DEF(496 nibbles) is reserved for RAM.
 
 DF0-DFF(16 nibbles) is reserved for IO(input/output).
 
-E00-FFF(256 nibbles) is reserved for VRAM(writes directly into the display).
+E00-FFF(512 nibbles) is reserved for VRAM(to write/read the bottom half of the display the mos significant bit of the DATA register must be set).
 
 
 # USE CASE
@@ -103,7 +103,14 @@ just a use case showing some kind of very limited console with a 32x32 display, 
 displays, one speaker, a joystick(it works just like a D-PAD) and two buttons(A and B).
 You can change the context where you insert the chip and it should still working properly. Though I
 recommend to reuse the BUS DRIVER as it contains the memory mapping.
-The 16x16 display is composed by 256 3-bit(8 colors) pixels.
+The 32x32 display is composed by 256 3-bit(8 colors) pixels.
+
+# IO
+The input/output section has 16 address.
+
+The 0-7 ones are two for each 7-segment display. The 8 and 9 are for low and high frecuency of the speaker respectively and the 10(A) is for the volume. All these are for write-only.
+
+The read-only addresses are: 11(B) for D-pad X and 12(C) for D-pad Y, 13(D) is for A button, 14(E) is for B button and 15(F) is for the random number generator, a 4-bit device that returns a semi-random number when required based on the times the user pressed the A and B buttons.
 
 # PROGRAMMING
 
