@@ -1,7 +1,7 @@
 ROM = 0x000
 RAM = 0xc00
-IO = 0xdf0
 VRAM = 0xe00
+IO = 0xf00
 
 
 #bankdef bank{
