@@ -90,23 +90,22 @@ top value from the STACK.
 # MEMORY MAPPING
 000-BFF(3072 nibbles) is reserved for the ROM.
 
-C00-DEF(496 nibbles) is reserved for RAM.
+C00-DFF(512 nibbles) is reserved for RAM.
 
-DF0-DFF(16 nibbles) is reserved for IO(input/output).
+E00-EFF(256 nibbles) is reserved for VRAM.
 
-E00-FFF(512 nibbles) is reserved for VRAM(to write/read the bottom half of the display the mos significant bit of the DATA register must be set).
-
+F00-FFF(256 nibbles) is reserved for IO(input/output).
 
 # USE CASE
 The processor doesn’t need all the circuitry present on the main view of the Logisim file. This is
-just a use case showing some kind of very limited console with a 32x32 display, four 7-segment
+just a use case showing some kind of very limited console with a 16x16 display, four 7-segment
 displays, one speaker, a joystick(it works just like a D-PAD) and two buttons(A and B).
 You can change the context where you insert the chip and it should still working properly. Though I
 recommend to reuse the BUS DRIVER as it contains the memory mapping.
-The 32x32 display is composed by 256 3-bit(8 colors) pixels.
+The 16x16 display is composed by 256 3-bit(8 colors) pixels.
 
 # IO
-The input/output section has 16 address.
+The input/output section has 265 address(first 16 for base IO and the rest for expansion).
 
 The 0-7 ones are two for each 7-segment display. The 8 and 9 are for low and high frecuency of the speaker respectively and the 10(A) is for the volume. All these are for write-only.
 
