@@ -48,17 +48,14 @@ IO = 0xf00
 		pop
 	}
 	addstack {value: i4} => asm{
-		set 0x1
+		set {value}
 		add
 		push
 		swap
 		pop
 	}
-	adddata {value: i4} => asm{
-		incstack {value}
-		pop
-	}
 }
 #bank bank
+
 main:
 	nop
